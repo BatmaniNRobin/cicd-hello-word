@@ -1,7 +1,10 @@
 
 from flask import Flask, jsonify
+from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
+csrf = CSRFProtect()
+csrf.init_app(app) 
 
 @app.route('/')
 def hello():
